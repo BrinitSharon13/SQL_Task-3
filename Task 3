@@ -1,0 +1,94 @@
+/* Display all columns for all employees.*/
+select * from emp;
+
+/* Show employee names and salaries.*/
+select Ename,sal from emp;
+
+/*Find employees who earn more than ₹40,000.*/
+select Ename 
+from emp
+where sal > 40000;
+
+/* List employees who work as 'Salesman'*/
+Select ename 
+from emp 
+where job = "Salesman";
+
+/* Show names and jobs of employees in department number 30.*/
+Select Ename,job
+from emp
+where deptno = 30;
+
+/* List employees in ascending order of salary.*/
+Select ename 
+from emp
+order by sal ;
+
+/* Display the top 5 highest paid employees.*/
+Select Ename,Sal
+from emp
+order by sal desc
+limit 5;
+
+/*Show employees who earn commission (Comm) more than ₹4000.*/
+Select Ename 
+from emp
+where comm > 4000;
+
+/* Find employees hired after January 1, 2022.*/
+Select Ename,Hiredate
+from emp
+where hiredate > '2022-01-01';
+
+/*List the first 3 employees (by ID) who work under manager 6.*/
+SELECT EmpNo, Ename, MGR FROM emp WHERE MGR = 6 ORDER BY EmpNo LIMIT 3;
+
+/*Find employees whose salary is greater than ₹40,000 and belong to department 10.*/
+select ename,sal,deptno
+from emp
+where sal > 40000 and deptno = 10;
+
+/*List employees who work as either 'Clerk' or 'Analyst'. */
+Select Ename
+from emp
+where job in ('Clerk','Analyst');
+
+/* Show all employees whose name starts with 'A'.*/
+Select ename 
+from emp
+where ename like 'A%';
+
+/* Display employees hired between '2021-01-01' and '2021-12-31'.*/
+Select ename 
+from emp
+where hiredate between '2021-01-01' and '2021-12-31';
+
+/*Find employees who earn between ₹30,000 and ₹50,000.*/
+Select ename 
+from emp
+where Sal between '30000' and '50000';
+
+/*Show names of employees whose job ends with 'man'.*/
+Select ename 
+from emp
+where job like '%man';
+
+/*List employees whose commission is greater than ₹4000 or whose salary is more than ₹60,000.*/
+Select Ename 
+from emp
+where comm > 4000 or sal > 60000;
+
+/*Find employees whose name contains the letter 'e'.*/
+Select Ename 
+from emp
+where ename like '%e%';
+
+/*Show employees who belong to department 20 and were hired after '2022-01-01'.*/
+Select *
+from emp
+where deptno = 20 and hiredate > '2022-01-01';
+
+/*List employees whose name does not start with 'J' and whose salary is less than ₹45,000.*/
+Select *
+from emp
+where ename not like 'J%' and sal < 45000;
